@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 @Table(name = "tbl_movie")
 public class Movie {
 
+	// Variables
 	@Id
 	@Column(name = "mid")
 	private int id;
@@ -30,11 +31,13 @@ public class Movie {
 	@Column(name = "mduration")
 	private float movieduration;
 
+	// Constructor using super class
 	public Movie() {
 		super();
 
 	}
 
+	// Constructor
 	public Movie(int id, String moviename, String movietype, String movielanguage, float movieduration) {
 		super();
 		this.id = id;
@@ -44,6 +47,7 @@ public class Movie {
 		this.movieduration = movieduration;
 	}
 
+	// Getters and setters
 	public int getId() {
 		return id;
 	}
