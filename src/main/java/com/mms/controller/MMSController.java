@@ -19,27 +19,35 @@ import com.mms.dao.MovieDAO;
 
 @RestController
 @CrossOrigin("http://localhost:4200")
-public class MMSController{
+public class MMSController {
 	@Autowired
 	MovieDAO dao;
+
 	@PostMapping("PerformInsert")
 	public String performInsert(@RequestBody Movie mov) {
 		dao.save(mov);
-		return "Inserted";	}
+		return "Inserted";
+	}
+
 	@PutMapping("PerformUpdate")
-	public String performUpdate(@RequestBody Movie mov){
+	public String performUpdate(@RequestBody Movie mov) {
 		dao.save(mov);
-		return "Updated";}
+		return "Updated";
+	}
+
 	@DeleteMapping("PerformDelete/{id}")
-	public String performDelete(@PathVariable int id){
+	public String performDelete(@PathVariable int id) {
 		dao.deleteById(id);
-		return "Deleted";}
+		return "Deleted";
+	}
+
 	@GetMapping("FindAllMovie")
 	public List<Movie> getAllMovies() {
 		Iterator<Movie> it = dao.findAll().iterator();
 		ArrayList<Movie> list = new ArrayList<Movie>();
 		while (it.hasNext()) {
-			list.add(it.next());}
+			list.add(it.next());
+		}
 		return list;
 	}
 }
