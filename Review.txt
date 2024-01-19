@@ -1,0 +1,1 @@
+This project is regarding Movie Management System integrated with Angular
