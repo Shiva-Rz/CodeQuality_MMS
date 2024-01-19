@@ -19,29 +19,29 @@ public class Movie {
 	private int id;
 
 	@Column(name = "mname")
-	private String name;
+	private String moviename;
 
 	@Column(name = "mtype")
-	private String type;
+	private String movietype;
 
 	@Column(name = "mlanguage")
-	private String language;
+	private String movielanguage;
 
 	@Column(name = "mduration")
-	private float duration;
+	private float movieduration;
 
 	public Movie() {
 		super();
 
 	}
 
-	public Movie(int id, String name, String type, String language, float duration) {
+	public Movie(int id, String moviename, String movietype, String movielanguage, float movieduration) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.type = type;
-		this.language = language;
-		this.duration = duration;
+		this.moviename = moviename;
+		this.movietype = movietype;
+		this.movielanguage = movielanguage;
+		this.movieduration = movieduration;
 	}
 
 	public int getId() {
@@ -52,36 +52,36 @@ public class Movie {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getMoviename() {
+		return moviename;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMoviename(String moviename) {
+		this.moviename = moviename;
 	}
 
-	public String getType() {
-		return type;
+	public String getMovietype() {
+		return movietype;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setMovietype(String movietype) {
+		this.movietype = movietype;
 	}
 
-	public String getLanguage() {
-		return language;
+	public String getMovielanguage() {
+		return movielanguage;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setMovielanguage(String movielanguage) {
+		this.movielanguage = movielanguage;
 	}
 
-	public float getDuration() {
-		return duration;
+	public float getMovieduration() {
+		return movieduration;
 	}
 
-	public void setDuration(float duration) {
-		this.duration = duration;
+	public void setMovieduration(float movieduration) {
+		this.movieduration = movieduration;
 	}
 
 }
