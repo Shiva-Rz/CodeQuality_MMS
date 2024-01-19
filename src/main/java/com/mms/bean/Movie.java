@@ -2,49 +2,34 @@ package com.mms.bean;
 
 import jakarta.persistence.Column;
 
-
 import jakarta.persistence.Entity;
-
 
 import jakarta.persistence.Id;
 
-
 import jakarta.persistence.Table;
-
-
 
 // Movie Id, Movie Name, Movie Type, Movie Language and Movie Durations.
 
 @Entity
 @Table(name = "tbl_movie")
 public class Movie {
-	
-	
+
 	@Id
 	@Column(name = "mid")
 	private int id;
-	
-	
+
 	@Column(name = "mname")
 	private String name;
-	
-	
 
 	@Column(name = "mtype")
 	private String type;
 
-	
-	
 	@Column(name = "mlanguage")
 	private String language;
-	
-	
-	
+
 	@Column(name = "mduration")
 	private float duration;
 
-	
-	
 	public Movie() {
 		super();
 
@@ -52,8 +37,11 @@ public class Movie {
 
 	public Movie(int id, String name, String type, String language, float duration) {
 		super();
-		this.id = id;this.name = name;
-		this.type = type;this.language = language;this.duration = duration;
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.language = language;
+		this.duration = duration;
 	}
 
 	public int getId() {
