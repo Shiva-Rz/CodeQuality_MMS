@@ -1,53 +1,91 @@
-package com.mms.controller;
+package com.mms.bean;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import jakarta.persistence.Column;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.persistence.Entity;
 
-import com.mms.bean.Movie;
-import com.mms.dao.MovieDAO;
+import jakarta.persistence.Id;
 
-@RestController
-@CrossOrigin("http://localhost:4200")
-public class MMSController {
-	@Autowired
-	MovieDAO dao;
+import jakarta.persistence.Table;
 
-	@PostMapping("PerformInsert")
-	public String performInsert(@RequestBody Movie mov) {
-		dao.save(mov);
-		return "Inserted";
+// Movie Id, Movie Name, Movie Type, Movie Language and Movie Durations.
+
+@Entity
+@Table(name = "tbl_movie")
+public class Movie {
+
+	// Variables
+	@Id
+	@Column(name = "mid")
+	private int id;
+
+	@Column(name = "mname")
+	private String moviename;
+
+	@Column(name = "mtype")
+	private String movietype;
+
+	@Column(name = "mlanguage")
+	private String movielanguage;
+
+	@Column(name = "mduration")
+	private float movieduration;
+
+	// Constructor using super class
+	public Movie() {
+		super();
+
 	}
 
-	@PutMapping("PerformUpdate")
-	public String performUpdate(@RequestBody Movie mov) {
-		dao.save(mov);
-		return "Updated";
+	// Constructor
+	public Movie(int id, String moviename, String movietype, String movielanguage, float movieduration) {
+		super();
+		this.id = id;
+		this.moviename = moviename;
+		this.movietype = movietype;
+		this.movielanguage = movielanguage;
+		this.movieduration = movieduration;
 	}
 
-	@DeleteMapping("PerformDelete/{id}")
-	public String performDelete(@PathVariable int id) {
-		dao.deleteById(id);
-		return "Deleted";
+	// Getters and setters
+	public int getId() {
+		return id;
 	}
 
-	@GetMapping("FindAllMovie")
-	public List<Movie> getAllMovies() {
-		Iterator<Movie> it = dao.findAll().iterator();
-		ArrayList<Movie> list = new ArrayList<Movie>();
-		while (it.hasNext()) {
-			list.add(it.next());
-		}
-		return list;
+	public void setId(int id) {
+		this.id = id;
 	}
+
+	public String getMoviename() {
+		return moviename;
+	}
+
+	public void setMoviename(String moviename) {
+		this.moviename = moviename;
+	}
+
+	public String getMovietype() {
+		return movietype;
+	}
+
+	public void setMovietype(String movietype) {
+		this.movietype = movietype;
+	}
+
+	public String getMovielanguage() {
+		return movielanguage;
+	}
+
+	public void setMovielanguage(String movielanguage) {
+		this.movielanguage = movielanguage;
+	}
+
+	public float getMovieduration() {
+		return movieduration;
+	}
+
+	public void setMovieduration(float movieduration) {
+		this.movieduration = movieduration;
+	}
+
 }
