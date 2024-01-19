@@ -1,0 +1,5 @@
+com\mms\SbMmsAngularApplication.class
+com\mms\ServletInitializer.class
+com\mms\bean\Movie.class
+com\mms\controller\MMSController.class
+com\mms\dao\MovieDAO.class
